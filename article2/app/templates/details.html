@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+#d1{
+    border: 2px solid;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+
+}
+#d2{
+    border: 2px solid;
+    height: 50px;
+    width: 350px;
+    /* margin-left:-5%; */
+    margin-top: -4%;
+}
+#d2 ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 2.5%;
+    font-size: 17px;
+    color: white;
+}
+#d3{
+    /* border: 2px solid; */
+    height: 50;
+    width: 350px;
+    margin-left:60%;
+}
+
+#d3 ol{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    margin-top: -6.5%;
+    font-size: 17px;
+    color: white;
+}
+#d4{
+   height: 40px;
+   width: 90px; 
+   margin-top: -14%;
+   border: none;
+   color: white;
+   box-shadow: -0.5px -3px white;
+   background-color: black;
+}
+#d2 li:hover{
+    cursor: pointer;
+}
+#d3 li:hover{
+    cursor: pointer;
+}
+body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: cyan;
+        
+    }
+.card {
+    background-color: #fffacd;
+    padding: 30px;
+    margin: 10px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s;
+    max-width: 70%;
+   margin-top: 4%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+.card h3{
+    text-align: center;
+}
+.card p {
+    margin-left: 0;
+    margin-bottom: 20px;
+}
+</style>
+<body>
+    <div id="d1"></div>
+        <div id="d2">
+            <ul>
+                <li>My Blogs</li>
+                <li>Home</li>
+                <li>About</li>
+            </ul>
+        </div>
+        <div id="d3">
+           <ol>
+            <li>Search</li>
+            <li><button id="d4">Sign in</button></li>
+           </ol>
+        </div>
+    </div>
+    <div class="card">
+    <h3>{{data1.name}}</h3><br>
+    <p>{{data1.description}}</p>
+    </div>
+</body>
+</html>

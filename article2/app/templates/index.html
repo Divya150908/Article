@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+#d1{
+    border: 2px solid;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+
+}
+#d2{
+    border: 2px solid;
+    height: 50px;
+    width: 350px;
+    /* margin-left:-5%; */
+    margin-top: 1%;
+}
+#d2 ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 2.5%;
+    font-size: 17px;
+    color: white;
+    margin-left: -80%; 
+}
+#d3{
+    border: 2px solid;
+    height: 50;
+    width: 350px;
+    margin-left:5%;
+}
+#d3 ol{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    padding-top: 6%;
+    font-size: 17px;
+    color: white;
+}
+#d4{
+   height: 40px;
+   width: 90px; 
+   margin-top: -14%;
+   border: none;
+   color: white;
+   box-shadow: -0.5px -3px white;
+   background-color: black;
+}
+#d2 li:hover{
+    cursor: pointer;
+}
+#d3 li:hover{
+    cursor: pointer;
+}
+
+    /*  */
+body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: cyan;
+        
+    }
+
+main {
+    text-align: center;
+}
+
+main h2{
+    margin-top: 2%;
+}
+
+.card {
+    background-color: #fffacd;
+    padding: 20px;
+    margin: 10px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s;
+    max-width: 600px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-left: 0;
+    color: #d0312d;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin: 0;
+}
+
+</style>
+<body>
+    <div id="d1">
+        <div id="d2">
+            <ul>
+                <li>My Blogs</li>
+                <li>Home</li>
+                <li>About</li>
+            </ul>
+        </div>
+        <div id="d3">
+           <ol>
+            <li><form action="" method="POST">
+                {% csrf_token %}
+                <input type="text" name="search" id=""><button type="submit">SEARCH</button>
+            </form></li>
+            <li><button id="d4">Sign in</button></li>
+           </ol>
+        </div>
+    </div>
+    <main>
+        <h2>Today's Articles</h2>
+        {% for i in data %}
+            <div class="card">
+                <a href="{% url 'details' i.id %}" style="color: red; text-decoration: none;"><h3>{{i.name}}</h3></a>
+                <p>{{i.description|truncatewords:9}}</p>
+            </div>
+        {% endfor %}
+
+    </main>
+</body>
+</html>
