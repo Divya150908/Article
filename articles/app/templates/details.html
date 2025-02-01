@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+    <style>
+        /* *{
+            background-color: cyan;
+        } */
+        #h{
+            border: 2px solid;
+            height: 200px;
+            background-color:#fffacd ;
+            margin: auto;
+            width: 1000px;
+            margin-top: 70px;
+        }
+        #h1{
+            color: #d0312d;
+            background-color:#fffacd ;
+            /* margin: auto; */
+            text-align: center;
+        }
+        #h2{
+            background-color:#fffacd ;
+            text-align: center;
+        }
+    </style>
+    
+    <div id="h">
+        <h2 id="h1">{{data1.name}}</h2><br>
+        <p id="h2"> {{data1.description}}</p>
+    </div>
+{% endblock content %}

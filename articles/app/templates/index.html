@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+
+
+    main {
+    text-align: center;
+}
+
+h1 {
+    color: white;
+}
+
+.card {
+    background-color: #fffacd;
+    padding: 20px;
+    margin: 10px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s;
+    max-width: 600px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-left: 0;
+    color: #d0312d;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin: 0;
+}
+
+</style>
+<body>
+   
+    <main>
+        <h2>Today's Articles</h2>
+        {% for i in data %}
+            <div class="card">
+                <a href="{% url 'details' i.id %}"><h3>{{i.name}}</h3></a>
+                <p>{{i.description|truncatewords:9}}</p>
+            </div>
+        {% endfor %}
+    </main>
+
+{% endblock content %}
